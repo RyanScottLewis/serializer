@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    serializer (0.1.0)
+    serializer (0.0.1)
       multi_json (~> 1.0)
       version (~> 1.0)
 

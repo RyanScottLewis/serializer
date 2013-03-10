@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.email = "ryan@rynet.us"
   s.files = [".gitignore", ".rspec", "Gemfile", "Gemfile.lock", "Guardfile", "LICENSE", "README.md", "Rakefile", "VERSION", "lib/serializer.rb", "lib/serializer/error.rb", "lib/serializer/helpers.rb", "lib/serializer/interface.rb", "lib/serializer/json.rb", "lib/serializer/marshal.rb", "lib/serializer/mechanism.rb", "serializer.gemspec", "spec/serializer/helpers_spec.rb", "spec/serializer/interface_spec.rb", "spec/serializer_spec.rb", "spec/spec_helper.rb", "tmp/rspec_guard_result"]
   s.homepage = "http://github.com/RyanScottLewis/serializer"
+  s.post_install_message = "Serializer is not yet finished, check back when this gem has a MINOR version!"
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.25"
   s.summary = "Serializer is an interface to various serialization mechanisms."

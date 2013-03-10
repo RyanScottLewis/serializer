@@ -18,6 +18,7 @@ spec = Gem::Specification.new do |s|
   s.email = 'ryan@rynet.us'
   s.summary = 'Serializer is an interface to various serialization mechanisms.'
   s.description = 'Serialize and deserialize your object.'
+  s.post_install_message = 'Serializer is not yet finished, check back when this gem has a MINOR version!'
   
   # Dependencies
   s.add_dependency 'version',    '~> 1.0'
