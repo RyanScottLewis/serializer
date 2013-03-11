@@ -1,4 +1,7 @@
+require 'active_support/core_ext/string/inflections'
 require 'serializer/helpers'
+require 'serializer/invalid_interface_error'
+require 'serializer/invalid_mechanism_error'
 
 module Serializer
   
@@ -6,7 +9,7 @@ module Serializer
   class Interface
     include Helpers
     
-    # @return [{ Symbol => Interface }] The list of registered Interfaces
+    # @return [{ Symbol => Interface }] The list of registered Interfaces.
     def self.interfaces
       @interfaces ||= {}
     end
@@ -16,14 +19,13 @@ module Serializer
     def self.register(interface)
       InvalidInterfaceError.check(interface)
       
-      interfaces[interface.to_s.downcase.to_sym] = interface
+      interfaces[interface.to_s.demodulize.underscore.to_sym] = interface
     end
     
-    # @!attribute [r] mechanism
-    #   @return [Mechanism] The mechanism calling this interface.
     attr_reader :mechanism
     
     # @param [Mechanism] mechanism
+    # @raise [InvalidMechanismError] When mechanism is not an instance or subclass of Serializer::Mechanism.
     def initialize(mechanism)
       InvalidMechanismError.check(mechanism)
       

@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<version>, ["~> 1.0"])
       s.add_runtime_dependency(%q<multi_json>, ["~> 1.0"])
+      s.add_runtime_dependency(%q<activesupport>, ["~> 3.2"])
       s.add_development_dependency(%q<rake>, ["~> 10.0"])
       s.add_development_dependency(%q<guard-rspec>, ["~> 2.1"])
       s.add_development_dependency(%q<guard-yard>, ["~> 2.0"])
@@ -33,6 +34,7 @@ Gem::Specification.new do |s|
     else
       s.add_dependency(%q<version>, ["~> 1.0"])
       s.add_dependency(%q<multi_json>, ["~> 1.0"])
+      s.add_dependency(%q<activesupport>, ["~> 3.2"])
       s.add_dependency(%q<rake>, ["~> 10.0"])
       s.add_dependency(%q<guard-rspec>, ["~> 2.1"])
       s.add_dependency(%q<guard-yard>, ["~> 2.0"])
@@ -45,6 +47,7 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<version>, ["~> 1.0"])
     s.add_dependency(%q<multi_json>, ["~> 1.0"])
+    s.add_dependency(%q<activesupport>, ["~> 3.2"])
     s.add_dependency(%q<rake>, ["~> 10.0"])
     s.add_dependency(%q<guard-rspec>, ["~> 2.1"])
     s.add_dependency(%q<guard-yard>, ["~> 2.0"])

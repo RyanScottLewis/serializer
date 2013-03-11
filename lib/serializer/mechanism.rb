@@ -1,5 +1,8 @@
 require 'forwardable'
 require 'serializer/helpers'
+require 'serializer/interface'
+require 'serializer/invalid_mechanism_options_error'
+require 'serializer/invalid_format_error'
 
 module Serializer
   
@@ -16,7 +19,8 @@ module Serializer
     
     # @param [Hash, #to_hash, #to_h] options The options for the Mechanism.
     # @option options [Symbol] :format Chooses which interface to use with this Mechanism.
-    # @raise [InvalidMechanismOptionsError]
+    # @raise [InvalidOptionsError] When a Hash-like object is not passed as an argument.
+    # @raise [InvalidMechanismOptionsError] When the options are invalid.
     def initialize(options={})
       options = validate_options(options)
       InvalidMechanismOptionsError.check(options)
@@ -32,7 +36,7 @@ module Serializer
       require "serializer/#{ format }"
       
       @format = format
-      @interface = self.class.const_get("Serializer::#{format.capitalize}").new(self)
+      @interface = Serializer.const_get(format.capitalize).new(self)
     end
     
   end

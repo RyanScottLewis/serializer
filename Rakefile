@@ -21,8 +21,9 @@ spec = Gem::Specification.new do |s|
   s.post_install_message = 'Serializer is not yet finished, check back when this gem has a MINOR version!'
   
   # Dependencies
-  s.add_dependency 'version',    '~> 1.0'
-  s.add_dependency 'multi_json', '~> 1.0'
+  s.add_dependency 'version',       '~> 1.0'
+  s.add_dependency 'multi_json',    '~> 1.0'
+  s.add_dependency 'activesupport', '~> 3.2'
   s.add_development_dependency 'rake',          '~> 10.0'
   s.add_development_dependency 'guard-rspec',   '~> 2.1'
   s.add_development_dependency 'guard-yard',    '~> 2.0'

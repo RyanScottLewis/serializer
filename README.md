@@ -12,7 +12,7 @@ Serializer is an interface to serialization mechanism interfaces. An interface i
 
 Serializer currently supports JSON, and Marshal.
 
-For JSON and XML, Serializer utilizes MultiJson and MultiXml, which selects the fastest available serializer for the job.
+For JSON, Serializer utilizes MultiJson which selects the fastest available serializer for the job.
 
 ```ruby
 require 'serializer'
