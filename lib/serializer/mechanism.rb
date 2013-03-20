@@ -1,13 +1,12 @@
 require 'forwardable'
 require 'serializer/helpers'
 require 'serializer/interface'
-require 'serializer/invalid_mechanism_options_error'
-require 'serializer/invalid_format_error'
 
 module Serializer
   
   # The mechanism to utilize an {Interface}.
   class Mechanism
+    
     extend Forwardable
     include Helpers
     
@@ -40,5 +39,5 @@ module Serializer
     end
     
   end
-
+  
 end

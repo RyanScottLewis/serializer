@@ -1,25 +1,30 @@
 require 'active_support/core_ext/string/inflections'
-require 'serializer/helpers'
-require 'serializer/invalid_interface_error'
-require 'serializer/invalid_mechanism_error'
+require 'serializer/errors'
 
 module Serializer
   
   # The abstract class for serialization mechanism interface classes.
   class Interface
-    include Helpers
     
-    # @return [{ Symbol => Interface }] The list of registered Interfaces.
-    def self.interfaces
-      @interfaces ||= {}
-    end
+    include Errors
     
-    # Register a new interface.
-    # @param [Interface] interface The interface to register.
-    def self.register(interface)
-      InvalidInterfaceError.check(interface)
+    class << self
       
-      interfaces[interface.to_s.demodulize.underscore.to_sym] = interface
+      include Errors
+      
+      # @return [{ Symbol => Interface }] The list of registered Interfaces.
+      def interfaces
+        @interfaces ||= {}
+      end
+      
+      # Register a new interface.
+      # @param [Interface] interface The interface to register.
+      def register(interface)
+        InvalidInterfaceError.check(interface)
+        
+        interfaces[interface.to_s.demodulize.underscore.to_sym] = interface
+      end
+    
     end
     
     attr_reader :mechanism

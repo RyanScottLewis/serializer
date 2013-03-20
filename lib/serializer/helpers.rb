@@ -1,9 +1,11 @@
-require 'serializer/invalid_options_error'
+require 'serializer/errors'
 
 module Serializer
   
   # Generic helper mixin.
   module Helpers
+
+    include Errors
     
     protected
     

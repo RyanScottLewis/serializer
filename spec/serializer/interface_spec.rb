@@ -26,7 +26,7 @@ describe Serializer::Interface do
     end
     
     it 'should raise an error when a Serializer::Interface is not passed as an argument' do
-      expect { described_class.register(MyLibrary::NonInterface) }.to raise_error(Serializer::InvalidInterfaceError)
+      expect { described_class.register(MyLibrary::NonInterface) }.to raise_error(Serializer::Errors::InvalidInterfaceError)
     end
     
   end
@@ -34,7 +34,7 @@ describe Serializer::Interface do
   describe '#initialize' do
     
     it 'should raise an error when an instance or subclass of Serializer::Mechanism is not passed as an argument' do
-      expect { described_class.new( Object.new ) }.to raise_error(Serializer::InvalidMechanismError)
+      expect { described_class.new( Object.new ) }.to raise_error(Serializer::Errors::InvalidMechanismError)
       expect { described_class.new( valid_mechanism ) }.not_to raise_error
     end
     
