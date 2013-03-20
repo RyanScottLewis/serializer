@@ -1,10 +1,10 @@
-require 'serializer/error'
+require 'serializer/errors/base'
 
 module Serializer
   module Errors
     
     # Raised when a Mechanism's format is set to an invalid valid
-    class InvalidFormatError < Error
+    class InvalidFormatError < Base
       
       # @param format The object to check to see if it is a valid format.
       # @raise [InvalidFormatError] When the format is not valid.

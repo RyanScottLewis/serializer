@@ -1,11 +1,11 @@
 require 'multi_json'
-require 'serializer/interface'
+require 'serializer/interfaces/base'
 
 module Serializer
   module Interfaces
     
     # An interface for the MultiJson interface.
-    class Json < Interface
+    class Json < Base
     
       # @param object The object to serialize.
       # @param [Hash, #to_hash, #to_h] options The options to pass to the serializer's interface.

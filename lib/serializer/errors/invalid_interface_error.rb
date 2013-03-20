@@ -1,11 +1,11 @@
-require 'serializer/error'
+require 'serializer/errors/base'
 require 'serializer/interface'
 
 module Serializer
   module Errors
     
     # Raised when an invalid mechanism is passed to the Interface.
-    class InvalidInterfaceError < Error
+    class InvalidInterfaceError < Base
       
       # @param interface The object to check to see if it is a Serializer::Interface.
       # @raise [InvalidInterfaceError] When the interface is not a Serializer::Interface.

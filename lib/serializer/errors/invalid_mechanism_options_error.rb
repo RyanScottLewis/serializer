@@ -1,10 +1,10 @@
-require 'serializer/error'
+require 'serializer/errors/base'
 
 module Serializer
   module Errors
     
     # Raised when a Mechanism's format is set to an invalid valid
-    class InvalidMechanismOptionsError < Error
+    class InvalidMechanismOptionsError < Base
       
       # @param options The object to check to see if it is a valid options for Mechanism.
       # @raise [InvalidOptionsError] When the options is not valid.

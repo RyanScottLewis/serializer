@@ -1,10 +1,10 @@
-require 'serializer/interface'
+require 'serializer/interfaces/base'
 
 module Serializer
   module Interfaces
     
     # An interface for the Ruby Marshal class.
-    class Marshal < Interface
+    class Marshal < Base
       
       # @param object The object to serialize.
       # @param [Hash, #to_hash, #to_h] options The options to pass to the serializer's interface.

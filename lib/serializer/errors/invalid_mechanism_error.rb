@@ -1,11 +1,11 @@
-require 'serializer/error'
+require 'serializer/errors/base'
 require 'serializer/mechanism'
 
 module Serializer
   module Errors
     
     # Raised when an invalid mechanism is passed to the Interface.
-    class InvalidMechanismError < Error
+    class InvalidMechanismError < Base
       
       # @param mechanism The object to check to see if it is a Serializer::Mechanism.
       # @raise [InvalidMechanismError] When the mechanism is not a Serializer::Mechanism.
